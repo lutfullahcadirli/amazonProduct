@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e9ecef; /* Açık gri arka plan rengi */
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Sayfanın yüksekliğini tam olarak kaplamak için */
+        display: flex;
+        justify-content: center; /* Yatay merkezleme */
+        align-items: center; /* Dikey merkezleme */
+    }
+    
+    .container {
+        width: 350px;
+        padding: 30px;
+        background-color: #343a40; /* Koyu form rengi */
+        color: white; /* Yazı rengini beyaz yapalım */
+        border-radius: 8px; /* Kenarları daha yuvarlak yapalım */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 26px; /* Yazı boyutunu biraz büyütelim */
+        margin-bottom: 20px; /* Başlık altına boşluk ekleyelim */
+    }
+    
+    .form-group {
+        margin-bottom: 20px; /* Alanlar arasında boşluk artırıldı */
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #f8f9fa; /* Açık renkli yazı */
+        font-size: 14px; /* Yazı boyutunu koruyalım */
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px; /* İç boşluk artırıldı */
+        border: 1px solid #495057; /* Koyu kenar rengi */
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px; /* Yazı boyutunu koruyalım */
+        background-color: #495057; /* Koyu arka plan rengi */
+        color: white; /* Yazı rengini beyaz yapalım */
+        transition: border-color 0.3s; /* Kenar rengi geçişi */
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #5cb85c; /* Odaklanıldığında kenar rengini değiştir */
+        outline: none; /* Kenar çerçevesini kaldır */
+    }
+    
+    button {
+        width: 100%;
+        padding: 12px; /* İç boşluk artırıldı */
+        background-color: #5cb85c;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 16px; /* Yazı boyutunu koruyabilirsiniz */
+        cursor: pointer;
+        transition: background-color 0.3s; /* Buton hover geçişi */
+    }
+    
+    button:hover {
+        background-color: #4cae4c;
+    }
+    
+    .footer {
+        text-align: center;
+        margin-top: 15px; /* Alt kısım için boşluk */
+        font-size: 14px;
+        color: #f8f9fa; /* Açık renk */
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kayıt Ol</h1>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Şifreyi Doğrula</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+        <div class="footer">
+            <p>Zaten bir hesabınız var mı? <a href="#">Giriş Yap</a></p>
+        </div>
+    </div>
+</body>
+</html>
