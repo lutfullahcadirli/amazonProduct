@@ -1,189 +1,141 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkında</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Özel stil dosyanız -->
+    <title>Wepseller - Giriş Yap</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Sayfa tam yüksekliğinde ve footer en altta */
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
+        /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #232f3e; /* Koyu arka plan */
+    color: #ffffff; /* Beyaz metin rengi */
+}
 
-        body {
-            display: flex;
-            flex-direction: column;
-        }
+header {
+    display: flex; /* Flexbox kullanarak hizalama sağlanıyor */
+    justify-content: center; /* Menü ortalanıyor */
+    align-items: center; /* Dikey hizalama */
+    background-color: #1a222f; /* Koyu mavi başlık arka planı */
+    padding: 20px;
+}
 
-        /* Butonların hover efekti */
-        .btn-custom {
-            background-color: #FF9900; /* Amazon sarısı */
-            color: white;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+.brand-name {
+    font-size: 26px;
+    color: #ffa41c; /* Turuncu renk */
+    margin: 0; /* Kenar boşluğunu sıfırla */
+    text-align: center; /* Metni ortala */
+    margin-right: 20px; /* Menü ile araya boşluk ekle */
+}
 
-        .btn-custom:hover {
-            background-color: white; /* Hover durumunda arka plan rengi */
-            color: #FF9900; /* Hover durumunda metin rengi */
-        }
+nav {
+    /* Menü için otomatik kenar boşluğu */
+}
 
-        /* Yazı boyutları */
-        h1 {
-            font-size: 2.5rem; /* Başlık boyutu */
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Kenar boşluğunu sıfırla */
+}
 
-        h2 {
-            font-size: 2rem; /* Alt başlık boyutu */
-        }
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
 
-        p {
-            font-size: 1.2rem; /* Paragraf boyutu */
-        }
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        /* Footer stili */
-        footer {
-            background-color: #343a40; /* Koyu gri */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: auto; /* Footer'ı en alta itmek için */
-        }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
 
-        /* Kart stili */
-        .card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #37475a; /* Hero bölümünün arka plan rengi */
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.hero h1 {
+    font-size: 36px;
+}
 
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+.cta-button {
+    background-color: #ffa41c; /* Buton rengi */
+    color: #111;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-        .card-text {
-            font-size: 1rem;
-            color: #555; /* Daha açık gri metin rengi */
-        }
+.features {
+    padding: 20px;
+    text-align: center;
+}
+
+.feature {
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a222f;
+}
+
+
+
     </style>
 </head>
-<body style="background-color: white;"> <!-- Sayfa arka planı beyaz -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #FF9900;"> <!-- Amazon sarısı -->
-        <div class="container">
-            <a class="navbar-brand" href="#" style="color: white;">WebSeller</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Affiliate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Contact Us</a>
-                    </li>
-                </ul>
-                <div class="navbar-nav">
-                    <a class="btn btn-custom mr-2" href="{% url 'accounts:signup_page' %}">Signup</a>
-                    <a class="btn btn-custom" href="{% url 'accounts:login_page' %}">Login</a>
-                </div>
+<body>
+    <header>
+        <h2 class="brand-name">Wepseller</h2> <!-- Marka ismi burada -->
+        <nav>
+            <ul>
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">Hizmetler</a></li>
+                <li><a href="#">İletişim</a></li>
+                <li><a href="{% url 'accounts:login_page' %}" style="color: #ffa41c;">Giriş Yap</a></li>
+                <li><a href="{% url 'accounts:signup_page' %}" style="color: #ffa41c;">Kayıt Ol</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    <main>
+        <section class="hero">
+            <h1>Wepseller ile Ürünlerinizi Yükseltin</h1>
+            <p>En iyi ürün araştırma ve geliştirme araçları burada.</p>
+            <button class="cta-button">Hızlı Başlayın</button>
+        </section>
+        <section class="features">
+            <h2>Özellikler</h2>
+            <div class="feature">
+                <h3>Özellik 1</h3>
+                <p>Açıklama burada yer alacak.</p>
             </div>
-        </div>
-    </nav>
-
-    <div class="container my-5">
-        <h1 class="text-center">Sitemize Hoşgeldiniz!</h1>
-        <p class="text-center">Biz, kullanıcılarımıza en iyi deneyimi sunmayı hedefleyen bir platformuz.</p>
-        
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <h2>Hakkımızda</h2>
-                <p>Bizim amacımız, kaliteli ürünleri uygun fiyatlarla sunmak. Sitemiz, kullanıcı dostu arayüzü ile alışverişi kolay ve keyifli hale getiriyor.</p>
+            <div class="feature">
+                <h3>Özellik 2</h3>
+                <p>Açıklama burada yer alacak.</p>
             </div>
-            <div class="col-md-6">
-                <h2>Vizyonumuz</h2>
-                <p>Müşteri memnuniyetini ön planda tutarak, her zaman en iyi hizmeti sunmak. Yenilikçi ve sürdürülebilir çözümlerle büyümeye devam edeceğiz.</p>
+            <div class="feature">
+                <h3>Özellik 3</h3>
+                <p>Açıklama burada yer alacak.</p>
             </div>
-        </div>
-
-        <!-- Orta kısımda kartlar -->
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hızlı Teslimat</h5>
-                        <p class="card-text">Ürünleriniz en kısa sürede kapınıza gelir. Hızlı ve güvenilir teslimat hizmetimizle tanışın!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Müşteri Desteği</h5>
-                        <p class="card-text">Herhangi bir sorunuz veya sorununuz varsa, 7/24 müşteri destek ekibimizle iletişime geçebilirsiniz.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Güvenli Alışveriş</h5>
-                        <p class="card-text">Ödeme bilgileriniz güvenli bir şekilde korunur. Güvenli alışverişin keyfini çıkarın!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5">
-            <h2>Bizimle İletişime Geçin!</h2>
-            <p>Herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen <a href="#">bize ulaşın</a>.</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
+        </section>
+    </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 WebSeller. Tüm hakları saklıdır.</p>
-            <p>
-                <a href="#">Gizlilik Politikası</a> |
-                <a href="#">Kullanım Şartları</a> |
-                <a href="#">İletişim</a>
-            </p>
-        </div>
+        <p>&copy; 2024 Wepseller. Tüm hakları saklıdır.</p>
     </footer>
-
-    <!-- Bootstrap JS, Popper.js, jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
