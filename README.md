@@ -1,0 +1,1 @@
+Bu proje, hem bireysel kullanıcılar hem de işletmeler için Amazon üzerinde daha etkili ürün araştırmaları yapma imkanı sunarak, e-ticaret stratejilerinin geliştirilmesine katkıda bulunmayı hedeflemektedir. Kullanıcılar, analiz sonuçları sayesinde pazar dinamiklerini daha iyi anlayacak ve ürün seçimlerinde daha doğru adımlar atabilecektir.

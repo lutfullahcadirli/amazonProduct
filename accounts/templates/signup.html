@@ -3,117 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayıt Ol</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Amazon Kayıt Ol</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #e9ecef; /* Açık gri arka plan rengi */
-        margin: 0;
-        padding: 0;
-        height: 100vh; /* Sayfanın yüksekliğini tam olarak kaplamak için */
-        display: flex;
-        justify-content: center; /* Yatay merkezleme */
-        align-items: center; /* Dikey merkezleme */
+       /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0;
+    background-color: #232f3e; /* Amazon'un koyu arka plan rengi */
+    color: #ffffff; /* Beyaz metin rengi */
+}
+
+.brand-name {
+    font-size: 26px;
+    color: #ffa41c; /* Amazon'un turuncu rengi */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 350px;
+    padding: 0 20px;
+}
+
+.form-box {
+    background-color: #37475a; /* Form kutusunun koyu mavi tonu */
+    padding: 20px 26px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    border: 1px solid #ddd; /* İnce gri çerçeve */
+}
+
+h1 {
+    font-size: 28px;
+    color: #ffffff; /* Başlık rengi beyaz */
+    font-weight: normal;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 13px;
+    color: #e6e6e6; /* Açık gri renk */
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 5px 0 15px 0;
+    font-size: 13px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #2e394c; /* Giriş alanları için koyu arka plan */
+    color: #ffffff; /* Metin rengi beyaz */
+}
+
+button {
+    width: 100%;
+    background-color: #ffa41c;
+    color: #111;
+    padding: 9px;
+    font-size: 13px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff8c00;
+}
+
+.login-link {
+    text-align: left;
+    font-size: 12px;
+    margin-top: 15px;
+    color: #e6e6e6; /* Açık gri renk */
+}
+
+.login-link a {
+    color: #ffa41c; /* Amazon'un turuncu rengi */
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mobil uyumluluk için medya sorguları */
+@media (max-width: 480px) {
+    .form-box {
+        padding: 15px 20px;
     }
-    
-    .container {
-        width: 350px;
-        padding: 30px;
-        background-color: #343a40; /* Koyu form rengi */
-        color: white; /* Yazı rengini beyaz yapalım */
-        border-radius: 8px; /* Kenarları daha yuvarlak yapalım */
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
-    }
-    
+
     h1 {
-        text-align: center;
-        font-size: 26px; /* Yazı boyutunu biraz büyütelim */
-        margin-bottom: 20px; /* Başlık altına boşluk ekleyelim */
+        font-size: 24px;
     }
-    
-    .form-group {
-        margin-bottom: 20px; /* Alanlar arasında boşluk artırıldı */
-    }
-    
-    label {
-        display: block;
-        margin-bottom: 5px;
-        color: #f8f9fa; /* Açık renkli yazı */
-        font-size: 14px; /* Yazı boyutunu koruyalım */
-    }
-    
+
+    label,
     input[type="text"],
     input[type="email"],
-    input[type="password"] {
-        width: 100%;
-        padding: 12px; /* İç boşluk artırıldı */
-        border: 1px solid #495057; /* Koyu kenar rengi */
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 14px; /* Yazı boyutunu koruyalım */
-        background-color: #495057; /* Koyu arka plan rengi */
-        color: white; /* Yazı rengini beyaz yapalım */
-        transition: border-color 0.3s; /* Kenar rengi geçişi */
-    }
-    
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="password"]:focus {
-        border-color: #5cb85c; /* Odaklanıldığında kenar rengini değiştir */
-        outline: none; /* Kenar çerçevesini kaldır */
-    }
-    
+    input[type="password"],
     button {
-        width: 100%;
-        padding: 12px; /* İç boşluk artırıldı */
-        background-color: #5cb85c;
-        border: none;
-        border-radius: 4px;
-        color: white;
-        font-size: 16px; /* Yazı boyutunu koruyabilirsiniz */
-        cursor: pointer;
-        transition: background-color 0.3s; /* Buton hover geçişi */
+        font-size: 12px;
     }
-    
-    button:hover {
-        background-color: #4cae4c;
+
+    .login-link {
+        font-size: 11px;
     }
-    
-    .footer {
-        text-align: center;
-        margin-top: 15px; /* Alt kısım için boşluk */
-        font-size: 14px;
-        color: #f8f9fa; /* Açık renk */
-    }
-    
+}
+
+
     </style>
 </head>
 <body>
+    <header>
+        <h2 class="brand-name">Wepseller</h2> <!-- Marka ismi burada -->
+    </header>
     <div class="container">
-        <h1>Kayıt Ol</h1>
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="username">Kullanıcı Adı</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
+        
+        <div class="form-box">
+            <h1>Hesap Oluştur</h1>
+            <form>
+                <label for="name">Adınız ve Soyadınız</label>
+                <input type="text" id="name" name="name" required>
+                
                 <label for="email">E-posta</label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
+                
                 <label for="password">Şifre</label>
                 <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Şifreyi Doğrula</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-            <button type="submit">Kayıt Ol</button>
-        </form>
-        <div class="footer">
-            <p>Zaten bir hesabınız var mı? <a href="#">Giriş Yap</a></p>
+                
+                <label for="password-confirm">Şifreyi Doğrula</label>
+                <input type="password" id="password-confirm" name="password-confirm" required>
+                
+                <button type="submit">Hesap Oluştur</button>
+                
+                <p class="login-link">Zaten bir hesabınız var mı? <a href="#">Giriş yapın</a></p>
+            </form>
         </div>
     </div>
+ 
+
 </body>
 </html>
